@@ -32,6 +32,7 @@ const NewTask = (props) => {
       const createdTask = { id: generatedId, text: taskText };
 
       props.onAddTask(createdTask);
+      
     } catch (err) {
       setError(err.message || 'Something went wrong!');
     }
