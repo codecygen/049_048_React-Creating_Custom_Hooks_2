@@ -15,11 +15,12 @@ const useHTTP = () => {
 
         try {
             const response = await fetch(
-                requestConfig.url, {
-                method: requestConfig.method ? requestConfig.method : 'GET',
-                headers: requestConfig.headers ? requestConfig.headers : {},
-                body: requestConfig.body ? JSON.stringify(requestConfig.body) : null
-            }
+                requestConfig.url,
+                {
+                    method: requestConfig.method ? requestConfig.method : 'GET',
+                    headers: requestConfig.headers ? requestConfig.headers : {},
+                    body: requestConfig.body ? JSON.stringify(requestConfig.body) : null
+                }
             );
 
             if (!response.ok) {
@@ -38,7 +39,7 @@ const useHTTP = () => {
         // Arguments of the function, does not need to be used as a dependency
         // parameter because function parameters does not have any sideEffect on 
         // the overall logic of the function, meaning it would always return the 
-        //same value for same input if nothing else is impacting the logic.
+        // same value for same input if nothing else is impacting the logic.
     }, []);
 
     // This is a modern way of writing a Javascript code
